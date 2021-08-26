@@ -67,4 +67,5 @@ class threController
         \DB::table('threads')->where("id",$id)->delete();
         return redirect("/threads");
     }
+
 }

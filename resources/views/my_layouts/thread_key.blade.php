@@ -21,6 +21,6 @@
         @endif
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <a href="/threads" class="btn btn-outline-success my-3">戻る</button>
+        <a href="/threads" class="btn btn-outline-success my-3">戻る</a>
     </div>
 </x-come-layout>

@@ -67,6 +67,4 @@ class comeController
         \DB::table("comments")->where("id",$id)->delete();
         return redirect("/{thread_id}/comments");
     }
-
-
 }
