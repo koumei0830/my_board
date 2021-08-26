@@ -65,6 +65,6 @@ class comeController
 
     public function postDeleteComeById($thread_id,$comment_id){
         \DB::table("comments")->where("id",$comment_id)->delete();
-        return redirect("/{thread_id}/comments");
+        return redirect("/".request()->route("thread_id")."/comments");
     }
 }
