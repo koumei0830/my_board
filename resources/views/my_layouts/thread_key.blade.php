@@ -7,18 +7,17 @@
         <button class="btn btn-outline-success" type="submit" >検索</button>
     </form>
     <div class="my-3">
-        @if(count($threads_keywords)!==0){
-         <p>こちらのテーマが検索できました</p>
-         <ul class="list-group list-group-flush">
-          @foreach ($thread_keywords as $thread_keyword)
-            <li class="list-group-item">
-                <p>{{$thread_keyword->title}}</p>
-            </li>
-          </ul>
+        @if(count($thread_keywords)!==0)
+            <p>こちらのテーマが検索できました</p>
+            <ul class="list-group list-group-flush">
+                @foreach ($thread_keywords as $thread_keyword)
+               <li class="list-group-item">
+                   <p>{{$thread_keyword->title}}</p>
+               </li>
+            </ul>
           @endforeach
-        }else{
+        @else
             <p>検索結果が見つかりませんでした</p>
-            }
         @endif
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">

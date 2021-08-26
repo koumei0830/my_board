@@ -17,7 +17,7 @@ class threController
         $keyword = request()->get("keyword");
         $thread_keywords = \DB::table('threads')->where("title", "like", "%$keyword%")->get();
         return view('my_layouts.thread_key', [
-//            "thread_keywords"=>$thread_keywords
+          "thread_keywords"=>$thread_keywords
         ]);
     }
 
