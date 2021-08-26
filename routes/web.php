@@ -19,6 +19,8 @@ Route::get('/', function () {
 
 
 
+
+
 Route::get('/{thread_id}/comments',[App\Http\Controllers\comeController::class,"getCome"]);
 
 Route::get('/{thread_id}/comment/new',[App\Http\Controllers\comeController::class,"getNewCome"]);
@@ -38,3 +40,5 @@ Route::get('/thread/{id}',[App\Http\Controllers\threController::class,"getThread
 Route::get('/thread/{id}/delete',[App\Http\Controllers\threController::class,"getDeleteThreadById"]);
 
 Route::post('/thread/{id}/delete',[App\Http\Controllers\threController::class,"postDeleteThreadById"]);
+
+Route::get('/thread_key',[App\Http\Controllers\threController::class,"getThreadKey"]);

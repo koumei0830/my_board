@@ -10,6 +10,6 @@ class Thread extends Model
     use HasFactory;
     public function comments()
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class,'thread_id');
     }
 }

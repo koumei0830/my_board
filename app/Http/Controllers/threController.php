@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 use Carbon\Carbon;
+use App\Models\Thread;
 class threController
 {
+
     public function getThread(){
         $threads=\DB::table('threads')->get();
-        return view('my_layouts/thread',[
+        return view('my_layouts.thread',[
             "threads"=>$threads
+        ]);
+    }
+
+    public function getThreadKey(){
+        $keyword = request()->get("keyword");
+        $thread_keywords = \DB::table('threads')->where("title", "like", "%$keyword%")->get();
+        return view('my_layouts.thread_key', [
+//            "thread_keywords"=>$thread_keywords
         ]);
     }
 
@@ -42,4 +52,19 @@ class threController
         ]);
     }
 
+    public function getDeleteThreadById($id){
+        $thread=\DB::table('threads')->where("id",$id)->first();
+        if($thread){
+        return view('my_layouts.thread_delete',[
+            "thread"=>$thread
+        ]);
+        }else{
+            return abort(404);
+        }
+    }
+
+    public function postDeleteThreadById($id){
+        \DB::table('threads')->where("id",$id)->delete();
+        return redirect("/threads");
+    }
 }

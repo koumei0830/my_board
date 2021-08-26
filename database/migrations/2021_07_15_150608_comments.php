@@ -22,10 +22,10 @@ class Comments extends Migration
             $table->dateTime('date_on');
             $table->timestamps();
 
-            $table->foreign('thread_id')
-                  ->references('id')
-                  ->on('threads')
-                  ->onDelete('cascade');
+//            $table->foreign('thread_id')
+//                  ->references('id')
+//                  ->on('threads')
+//                  ->onDelete('cascade');
         });
     }
 

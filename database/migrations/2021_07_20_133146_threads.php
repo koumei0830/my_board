@@ -20,6 +20,13 @@ class Threads extends Migration
             $table->timestamp('created_at');
             $table->timestamp('updated_at');
         });
+
+        Schema::table('comments', function (Blueprint $table) {
+            $table->foreign('thread_id')
+                ->references('id')
+                ->on('threads')
+                ->onDelete('cascade');
+        });
     }
 
     /**
